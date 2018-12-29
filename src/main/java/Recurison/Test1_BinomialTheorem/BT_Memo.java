@@ -4,7 +4,7 @@ public class BT_Memo {
     private static int[][] memo;
 
     public static void main(String[] args) {
-        int n=5,k=3;
+        int n=6,k=3;
 
         memo = new int[n+1][k+1];
         System.out.println(BT_Memo(n,k));;
@@ -16,7 +16,7 @@ public class BT_Memo {
         }else if(k<=1){
             memo[n][k] = n;
         }else {
-            memo[n][k] = BT_Memo(n-1, k-1) + BT_Memo(n-1, k);
+            memo[n][k] = (memo[n-1][k-1] > 0 ? memo[n-1][k-1] : BT_Memo(n-1, k-1)) + (memo[n-1][k] > 0 ? memo[n-1][k] : BT_Memo(n-1, k));
         }
 
         return memo[n][k];
