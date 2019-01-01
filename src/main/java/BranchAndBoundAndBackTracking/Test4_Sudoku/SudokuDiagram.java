@@ -14,9 +14,9 @@ public class SudokuDiagram {
         this.line = line;
     }
 
-    public SudokuDiagram(){
-        this.sudokuDiagram = new int[9][9];
-        initialDiagram(this.sudokuDiagram);
+    public SudokuDiagram(int[][] sudokuDiagram){
+        this.sudokuDiagram = sudokuDiagram;
+
         generation = getOriginGeneration(this.sudokuDiagram);
         line = 0;
     }
@@ -85,6 +85,10 @@ public class SudokuDiagram {
         int a = (x/3)*3, b =(y/3)*3;
         for(int startx = a;startx<a+3; startx++){
             for( int starty = b;starty<b+3; starty++){
+                if(startx == x && starty == y){
+                    continue;
+                }
+
                 if(sudokuDiagram[startx][starty] == sudokuDiagram[x][y]){
                     return false;
                 }
@@ -95,10 +99,6 @@ public class SudokuDiagram {
         return true;
     }
 
-    //获取随机的数独数字
-    public int getRandomNumber(){
-        return (int)(Math.random()*9+1);
-    }
 
     //加节点
     public void addSudokuDiagram(SudokuDiagram diagram){

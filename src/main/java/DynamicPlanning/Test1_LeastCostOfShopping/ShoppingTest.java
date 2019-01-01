@@ -25,8 +25,10 @@ public class ShoppingTest {
         ShoppingWay discountWay3 = new ShoppingWay(goods2,1);
         ShoppingWay discountWay4 = new ShoppingWay(goods3,1);
 
-        ShoppingList discountList1 = new ShoppingList(); discountList1.addShoppingWay(discountWay1);discountList1.addShoppingWay(discountWay4);
-        ShoppingList discountList2 = new ShoppingList(); discountList2.addShoppingWay(discountWay2);discountList2.addShoppingWay(discountWay3);
+        ShoppingList discountList1 = new ShoppingList();
+        discountList1.addShoppingWay(discountWay1);discountList1.addShoppingWay(discountWay4);
+        ShoppingList discountList2 = new ShoppingList();
+        discountList2.addShoppingWay(discountWay2);discountList2.addShoppingWay(discountWay3);
         discounts.addDiscount(discountList1, 8.0);
         discounts.addDiscount(discountList2, 10.0);
 

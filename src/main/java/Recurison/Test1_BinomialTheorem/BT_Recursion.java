@@ -4,7 +4,21 @@ public class BT_Recursion {
 
 
     public static void main(String[] args) {
-        System.out.println(BT_Recursion(6,3));
+        int k,n;
+
+        for(int i=10;i<=40;i+=5){
+            k = i;
+            n = i + 10;
+
+            //Test
+            long startTime = System.currentTimeMillis();
+            BT_Recursion(n, k);
+            long endtime = System.currentTimeMillis();
+
+            long runTime = endtime - startTime;
+            System.out.println("当n为"+ i +"运行时间：" + runTime);
+        }
+
     }
 
     public static int BT_Recursion(int n, int k){

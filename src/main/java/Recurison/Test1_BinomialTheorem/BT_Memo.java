@@ -4,10 +4,21 @@ public class BT_Memo {
     private static int[][] memo;
 
     public static void main(String[] args) {
-        int n=6,k=3;
+        int n,k;
 
-        memo = new int[n+1][k+1];
-        System.out.println(BT_Memo(n,k));;
+        for(int i=1000;i<=50000;i+=2000){
+            k = i;
+            n = i + 10;
+
+            memo = new int[n+1][k+1];
+            //Test
+            long startTime = System.currentTimeMillis();
+            BT_Memo(n, k);
+            long endtime = System.currentTimeMillis();
+
+            long runTime = endtime - startTime;
+            System.out.println("当n为"+ i +"运行时间：" + runTime);
+        }
     }
 
     public static int BT_Memo(int n, int k){

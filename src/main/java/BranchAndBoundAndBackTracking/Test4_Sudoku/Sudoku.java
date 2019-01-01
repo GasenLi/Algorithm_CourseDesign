@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import static BranchAndBoundAndBackTracking.Test4_Sudoku.SudokuDiagram.judgeIsRepeat;
 
 public class Sudoku {
-    SudokuDiagram originNode = new SudokuDiagram();
+    SudokuDiagram originNode;
     LinkedList<SudokuDiagram> results = new LinkedList<>();
 
 
